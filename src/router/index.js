@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import ListDemo from '../views/ListDemo'
+import MainDemo from '../views/MainDemo'
+import HtmlDemo from '../views/HtmlDemo'
 
 Vue.use(VueRouter)
 
@@ -8,7 +11,20 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    children: [{
+      path: '/listdemo',
+      name: 'listDemo',
+      component: ListDemo
+    },{
+      path: '/',
+      name: 'mainDemo',
+      component: MainDemo
+    },{
+      path: '/htmldemo',
+      name: 'htmlDemo',
+      component: HtmlDemo
+    }]
   },
   {
     path: '/about',
